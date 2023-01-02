@@ -1,0 +1,60 @@
+:root {
+    --positionA: 0;
+    --positionB: 0;
+}
+
+body {
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+}
+
+.avatar-wrap {
+    position: fixed;
+    animation: avatar-walking 12s linear infinite;
+    animation-play-state: paused;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    top: 0;
+    left: 0;
+}
+
+.avatar {
+    width: calc(1536px / 6);
+    height: 256px;
+    background-image: url("../images/avatar.webp");
+    transform: scale(0.5);
+    transform-origin: bottom;
+    animation: avatar-motion 0.7s steps(6) infinite;
+    animation-play-state: paused;
+}
+
+@keyframes avatar-motion {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: -1536px;
+    }
+}
+
+
+/* @keyframes avatar-walking {
+    from {
+        left: 0;
+    }
+    to {
+        left: 95vw;
+    }
+}
+
+@keyframes backword-avatar-walking {
+    from {
+        transform: translate(var(--positionA), 0%);
+    }
+    to {
+        transform: translate(var(--positionB), 0%);
+    }
+} */
